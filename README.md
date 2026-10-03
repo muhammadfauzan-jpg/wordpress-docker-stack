@@ -1,17 +1,22 @@
-# WordPress Docker Stack - Production Ready
+# WordPress Docker Stack - M2 Mac Ready ⚡️
 
-A lightweight, production-ready WordPress stack built with Docker for high performance and easy deployment.
+Production-ready WordPress stack running on Docker, optimized for Apple Silicon (M1/M2/M3).
 
-This is not your typical XAMPP setup. This is how remote DevOps deploy WordPress for clients.
+I built this because most tutorials fail on M2 Mac. This one just works.
 
-### 🚀 Tech Stack
-- **WordPress:** Latest (PHP 8.x)
-- **Database:** MySQL 8.0 (ARM64 Compatible - M1/M2 Mac Ready)
-- **Containerization:** Docker & Docker Compose
-- **Persistence:** Named Volumes for data safety
+![WordPress Dashboard](dashboard.png)
 
-### ⚡ Quick Start
-1. Clone this repo
+### Live Proof
+Running locally at `http://localhost:8081`
+
+### Tech Stack
+- WordPress 6.x
+- MySQL 8.0 (M2 Compatible)
+- Docker & Docker Compose
+- Volumes for persistent data
+
+### How to Run
 ```bash
-git clone https://github.com/username-lo/wordpress-docker-stack.git
+git clone https://github.com/muhammadfauzan-jpg/wordpress-docker-stack.git
 cd wordpress-docker-stack
+docker-compose up -d
