@@ -1,5 +1,3 @@
 FROM wordpress:6.8-apache
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
-ENTRYPOINT ["/usr/local/binlentrypoint.sh"]
-EXPOSE 80
+RUN echo '#!/bin/bash\nrm -f /etc/apache2/mods-enabled/mpm_event.* /etc/apache2/mods-enabled/mpm_worker.*\na2enmod mpm_prefork rewrite\n exec docker-entrypoint.sh apache2-foreground' > /start.sh && chmod +x /start.sh
+ENTRYPOINT ["/start.sh"]
